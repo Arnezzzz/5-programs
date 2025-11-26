@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Calculators</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .calculator {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        h2 {
+            color: #444;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .input-group {
+            margin-bottom: 10px;
+        }
+        
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+        
+        input {
+            padding: 5px;
+            width: 150px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px dashed #ccc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Math Calculators</h1>
+    
+    <!-- Addition Calculator -->
+    <div class="calculator">
+        <h2>Addition Calculator</h2>
+        <div class="input-group">
+            <label for="addNum1">Enter first number:</label>
+            <input type="number" id="addNum1">
+        </div>
+        <div class="input-group">
+            <label for="addNum2">Enter second number:</label>
+            <input type="number" id="addNum2">
+        </div>
+        <button id="addBtn">Calculate Sum</button>
+        <div class="result" id="addResult">Result: </div>
+    </div>
+    
+    <!-- Subtraction Calculator -->
+    <div class="calculator">
+        <h2>Subtraction Calculator</h2>
+        <div class="input-group">
+            <label for="subNum1">Enter first number:</label>
+            <input type="number" id="subNum1">
+        </div>
+        <div class="input-group">
+            <label for="subNum2">Enter second number:</label>
+            <input type="number" id="subNum2">
+        </div>
+        <button id="subBtn">Calculate Difference</button>
+        <div class="result" id="subResult">Result: </div>
+    </div>
+    
+    <!-- Multiplication Calculator -->
+    <div class="calculator">
+        <h2>Multiplication Calculator</h2>
+        <div class="input-group">
+            <label for="mulNum1">Enter first number:</label>
+            <input type="number" id="mulNum1">
+        </div>
+        <div class="input-group">
+            <label for="mulNum2">Enter second number:</label>
+            <input type="number" id="mulNum2">
+        </div>
+        <button id="mulBtn">Calculate Product</button>
+        <div class="result" id="mulResult">Result: </div>
+    </div>
+    
+    <!-- Division Calculator -->
+    <div class="calculator">
+        <h2>Division Calculator</h2>
+        <div class="input-group">
+            <label for="divNum1">Enter first number:</label>
+            <input type="number" id="divNum1">
+        </div>
+        <div class="input-group">
+            <label for="divNum2">Enter second number:</label>
+            <input type="number" id="divNum2">
+        </div>
+        <button id="divBtn">Calculate Quotient</button>
+        <div class="result" id="divResult">Result: </div>
+    </div>
+    
+    <!-- Remainder Calculator -->
+    <div class="calculator">
+        <h2>Remainder Calculator</h2>
+        <div class="input-group">
+            <label for="remNum1">Enter first number:</label>
+            <input type="number" id="remNum1">
+        </div>
+        <div class="input-group">
+            <label for="remNum2">Enter second number:</label>
+            <input type="number" id="remNum2">
+        </div>
+        <button id="remBtn">Calculate Remainder</button>
+        <div class="result" id="remResult">Result: </div>
+    </div>
+
+    <script>
+        // Addition Calculator
+        document.getElementById('addBtn').addEventListener('click', function() {
+            const num1 = parseFloat(document.getElementById('addNum1').value);
+            const num2 = parseFloat(document.getElementById('addNum2').value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('addResult').textContent = 'Result: Please enter valid numbers';
+                return;
+            }
+            
+            const result = num1 + num2;
+            document.getElementById('addResult').textContent = 'Result: ' + result;
+        });
+        
+        // Subtraction Calculator
+        document.getElementById('subBtn').addEventListener('click', function() {
+            const num1 = parseFloat(document.getElementById('subNum1').value);
+            const num2 = parseFloat(document.getElementById('subNum2').value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('subResult').textContent = 'Result: Please enter valid numbers';
+                return;
+            }
+            
+            const result = num1 - num2;
+            document.getElementById('subResult').textContent = 'Result: ' + result;
+        });
+        
+        // Multiplication Calculator
+        document.getElementById('mulBtn').addEventListener('click', function() {
+            const num1 = parseFloat(document.getElementById('mulNum1').value);
+            const num2 = parseFloat(document.getElementById('mulNum2').value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('mulResult').textContent = 'Result: Please enter valid numbers';
+                return;
+            }
+            
+            const result = num1 * num2;
+            document.getElementById('mulResult').textContent = 'Result: ' + result;
+        });
+        
+        // Division Calculator
+        document.getElementById('divBtn').addEventListener('click', function() {
+            const num1 = parseFloat(document.getElementById('divNum1').value);
+            const num2 = parseFloat(document.getElementById('divNum2').value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('divResult').textContent = 'Result: Please enter valid numbers';
+                return;
+            }
+            
+            if (num2 === 0) {
+                document.getElementById('divResult').textContent = 'Result: Cannot divide by zero';
+                return;
+            }
+            
+            const result = num1 / num2;
+            document.getElementById('divResult').textContent = 'Result: ' + result.toFixed(2);
+        });
+        
+        // Remainder Calculator
+        document.getElementById('remBtn').addEventListener('click', function() {
+            const num1 = parseFloat(document.getElementById('remNum1').value);
+            const num2 = parseFloat(document.getElementById('remNum2').value);
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('remResult').textContent = 'Result: Please enter valid numbers';
+                return;
+            }
+            
+            if (num2 === 0) {
+                document.getElementById('remResult').textContent = 'Result: Cannot divide by zero';
+                return;
+            }
+            
+            const result = num1 % num2;
+            document.getElementById('remResult').textContent = 'Result: ' + result;
+        });
+    </script>
+</body>
+</html>
